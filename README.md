@@ -283,11 +283,13 @@
 <br>
   
 # 開発環境
-  
+- Ruby
+- Ruby on rails
+- JavaScript
+- HTML/CSS
+
 <br>
-<br>
-  
-## 工夫したポイント
+
   
   
   
