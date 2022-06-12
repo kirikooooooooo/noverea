@@ -278,7 +278,7 @@
 <br>
   
 # 画面遷移図
-[ノベリア画面遷移図0612.pdf](https://github.com/kirikooooooooo/noverea/files/8885651/0612.pdf)
+<img width="655" alt="スクリーンショット 2022-06-12 19 32 09" src="https://user-images.githubusercontent.com/104757248/173229125-e4483f0b-c4f9-439d-bc90-f2185a48aeee.png">
 <br>
 <br>
   
