@@ -9,7 +9,6 @@ require("@rails/activestorage").start()
 require("channels")
 require("../fixmenu_pagetop")
 require("../fixmenu")
-require("../jquery.inview_set")
 require("../openclose")
 
 

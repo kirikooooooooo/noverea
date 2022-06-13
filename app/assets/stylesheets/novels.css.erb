@@ -13,7 +13,7 @@ body {
 	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
 	font-size: 16px;	/*文字サイズ*/
 	line-height: 2;		/*行間*/
-	background: #f9f6f0 url(../images/bg.jpg) center / 100px;
+	background: #f9f6f0 url(<%= asset_path 'bg.jpg' %>) center / 100px;
 }
 h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
 ul {list-style-type: none;}
@@ -175,7 +175,7 @@ body.is-fixed #menubar.nav-fix-pos {
 #}
 body.is-fixed .contents:first-of-type {
 	margin-top: 100px;
-}
+#}
 
 /*contents
 ---------------------------------------------------------------------------*/
@@ -369,7 +369,7 @@ footer .pr {display: block;}
 #footermenu {
 	overflow: hidden;
 	padding: 20px 3%;	/*上下、左右のボックス内の余白*/
-	background: url(../images/logo_footer.png) no-repeat right center / 20%;	/*背景画像の読み込み。右側、上下中央に配置。画像はブロック幅の20%で読み込む。*/
+	background: url url(<%= asset_path 'logo_footer.png' %>) no-repeat right center / 20%;	/*背景画像の読み込み。右側、上下中央に配置。画像はブロック幅の20%で読み込む。*/
 	color: #fff;		/*文字色*/
 }
 /*１行分の設定*/
@@ -645,15 +645,15 @@ input[type="reset"].btn:hover {
 /*背景色（bg1）
 ---------------------------------------------------------------------------*/
 .bg1 {
-	background: #e7dac4 url(../images/bg1.jpg);	/*背景色、背景画像の読み込み。※古いブラウザ用。*/
-	background: #e7dac4 url(../images/bg1.jpg) center / 100px;	/*背景色、背景画像の読み込み。*/
+	background: #e7dac4 url(<%= asset_path 'bg1.jpg' %>);	/*背景色、背景画像の読み込み。※古いブラウザ用。*/
+	background: #e7dac4 url(<%= asset_path 'bg1.jpg' %>) center / 100px;	/*背景色、背景画像の読み込み。*/
 }
 
 /*背景色（bg2）
 ---------------------------------------------------------------------------*/
 .bg2 {
-	background: #532673 url(../images/bg2.jpg);	/*背景色、背景画像の読み込み。※古いブラウザ用。*/
-	background: #532673 url(../images/bg2.jpg) center / 100px;	/*背景色、背景画像の読み込み。*/
+	background: #532673 url(<%= asset_path 'bg2.jpg' %>);	/*背景色、背景画像の読み込み。※古いブラウザ用。*/
+	background: #532673 url(<%= asset_path 'bg2.jpg' %>) center / 100px;	/*背景色、背景画像の読み込み。*/
 	color: #fff;	/*文字色*/
 }
 .bg2 a {color: #fff;}
@@ -662,8 +662,8 @@ input[type="reset"].btn:hover {
 /*背景色（bg-access）※全ページ下部にある「アクセス」ブロック
 ---------------------------------------------------------------------------*/
 .bg-access {
-	background: #184062 url(../images/bg-access.jpg);	/*背景色、背景画像の読み込み。※古いブラウザ用。*/
-	background: #184062 url(../images/bg-access.jpg) center / cover;	/*背景色、背景画像の読み込み。*/
+	background: #184062 url(<%= asset_path 'bg-access.jpg' %>)(../images/bg-access.jpg);	/*背景色、背景画像の読み込み。※古いブラウザ用。*/
+	background: #184062 url(<%= asset_path 'bg-access.jpg' %>) center / cover;	/*背景色、背景画像の読み込み。*/
 }
 .bg-access,.bg-access a {color: #fff;}
 /*bg-access内のテーブル(ta1)*/
@@ -810,27 +810,27 @@ img.fl,figure.fl {float: left;margin: 10px;}
 /*「施設のご案内」メニューの設定
 背景色。アイコンの読み込み。左から15pxの場所に配置。背景画像の一番上(0)を基準に読み込む。サイズは50px。*/
 #menubar-s li.info {
-	background: rgba(0,0,0,0.8) url(../images/mark_menu.png) no-repeat 15px 0px / 50px;
+	background: rgba(0,0,0,0.8) url(<%= asset_path 'mark_menu.png' %>) no-repeat 15px 0px / 50px;
 }
 /*「イベント」メニューの設定
 背景色。アイコンの読み込み。左から15pxの場所に配置。背景画像の上から100px(-100px)を基準に読み込む。サイズは50px。*/
 #menubar-s li.event {
-	background: rgba(0,0,0,0.8) url(../images/mark_menu.png) no-repeat 15px -100px / 50px;
+	background: rgba(0,0,0,0.8) url(<%= asset_path 'mark_menu.png' %>) no-repeat 15px -100px / 50px;
 }
 /*「お買い物」メニューの設定
 背景色。アイコンの読み込み。左から15pxの場所に配置。背景画像の上から100px(-200px)を基準に読み込む。サイズは50px。*/
 #menubar-s li.shopping {
-	background: rgba(0,0,0,0.8) url(../images/mark_menu.png) no-repeat 15px -200px / 50px;
+	background: rgba(0,0,0,0.8) url(<%= asset_path 'mark_menu.png' %>) no-repeat 15px -200px / 50px;
 }
 /*「周辺マップ」メニューの設定
 背景色。アイコンの読み込み。左から15pxの場所に配置。背景画像の上から100px(-300px)を基準に読み込む。サイズは50px。*/
 #menubar-s li.map {
-	background: rgba(0,0,0,0.8) url(../images/mark_menu.png) no-repeat 15px -300px / 50px;
+	background: rgba(0,0,0,0.8) url(<%= asset_path 'mark_menu.png' %>) no-repeat 15px -300px / 50px;
 }
 /*「お問い合わせ」メニューの設定
 背景色。アイコンの読み込み。左から15pxの場所に配置。背景画像の上から100px(-400px)を基準に読み込む。サイズは50px。*/
 #menubar-s li.contact {
-	background: rgba(0,0,0,0.8) url(../images/mark_menu.png) no-repeat 15px -400px / 50px;
+	background: rgba(0,0,0,0.8) url(<%= asset_path 'mark_menu.png' %>) no-repeat 15px -400px / 50px;
 }
 /*英語表記（飾り文字）*/
 #menubar-s li a span {
@@ -858,11 +858,11 @@ img.fl,figure.fl {float: left;margin: 10px;}
 }
 /*三本バーアイコン*/
 #menubar_hdr.close {
-	background: #fff url(../images/icon_menu.png) no-repeat center top/50px;
+	background: #fff url(<%= asset_path 'icon_menu.png' %>) no-repeat center top/50px;
 }
 /*閉じるアイコン*/
 #menubar_hdr.open {
-	background: #fff url(../images/icon_menu.png) no-repeat center bottom/50px;
+	background: #fff url(<%= asset_path 'icon_menu.png' %>) no-repeat center bottom/50px;
 }
 
 /*fixmenu設定（メニューが画面上部に到達した際のスタイル）の設定をなくす
