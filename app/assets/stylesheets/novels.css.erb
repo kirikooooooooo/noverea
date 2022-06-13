@@ -118,7 +118,7 @@ header h1 {
 	padding-top: 10px;	/*メニュー内の上に空ける余白。上下のバランスをここで調整して下さい。*/
 	padding-left: 70px;	/*メニュー内の左側に空ける余白。アイコンとのバランスを調整します。*/
 	border-radius: 5px;	/*角丸のサイズ。マウスオン時に角が丸くなる設定です。*/
-}
+#}
 /*「ホーム」メニューの設定
 #アイコンの読み込み。左から15pxの場所に配置。背景画像の一番上(0)を基準に読み込む。サイズは50px。*/
 #menubar li.info {
@@ -150,11 +150,11 @@ header h1 {
 	letter-spacing: 0.2em;	/*文字間隔を少し広くする設定*/
 	padding-left: 3px;		/*左に少しだけ余白を作る。*/
 	opacity: 0.6;			/*60%だけ色がついた状態。*/
-}
+#}
 /*マウスオン時メニューと、現在表示中(current)メニューの設定*/
 #menubar li a:hover,#menubar li.current a {
 	background: rgba(0,0,0,0.15);	/*0,0,0は黒の事で、0.15は15%だけ色がついた状態の事。*/
-}
+#}
 /*スマホ用メニューを表示させない*/
 #menubar-s {display: none;}
 /*３本バーアイコンを表示させない*/
@@ -165,14 +165,14 @@ header h1 {
 /*上部固定メニュー用fixmenu設定*/
 body.is-fixed-menu #menubar.nav-fix-pos {
 	position: fixed;width: 100%;top: 0px;
-}
+#}
 body.is-fixed-menu .contents:first-of-type {
 	margin-top: 100px;	/*メニューブロックの高さを指定する。背景画像も高さ100pxなので通常はこのままで。*/
 }
 /*※以下の２ブロックのスタイルの「中身」は、上の２ブロックのスタイルと単純に合わせておいて下さい。fixmenuスクリプトを２つ使う為に必要な設定になります。*/
 body.is-fixed #menubar.nav-fix-pos {
 	position: fixed;width: 100%;top: 0px;
-}
+#}
 body.is-fixed .contents:first-of-type {
 	margin-top: 100px;
 }
