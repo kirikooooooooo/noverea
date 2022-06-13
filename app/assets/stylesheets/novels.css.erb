@@ -118,31 +118,32 @@ header h1 {
 	padding-top: 10px;	/*メニュー内の上に空ける余白。上下のバランスをここで調整して下さい。*/
 	padding-left: 70px;	/*メニュー内の左側に空ける余白。アイコンとのバランスを調整します。*/
 	border-radius: 5px;	/*角丸のサイズ。マウスオン時に角が丸くなる設定です。*/
-#}
+}
 /*「ホーム」メニューの設定
 #アイコンの読み込み。左から15pxの場所に配置。背景画像の一番上(0)を基準に読み込む。サイズは50px。*/
 #menubar li.info {
 	#background: url(<%= asset_path 'mark_menu.png' %>) no-repeat 15px 0px / 50px;
-#}
+}
 /*「コンセプト」メニューの設定
 アイコンの読み込み。左から15pxの場所に配置。背景画像の上から100px(-100px)を基準に読み込む。サイズは50px。*/
+#menubar li.info {
 	#background: url(<%= asset_path 'mark_menu.png' %>) no-repeat 15px -100px / 50px;
-#}
+}
 /*「小説情報投稿」メニューの設定
 アイコンの読み込み。左から15pxの場所に配置。背景画像の上から100px(-200px)を基準に読み込む。サイズは50px。*/
 #menubar li.shopping {
 	#background: url(<%= asset_path 'mark_menu.png' %>) no-repeat 15px -200px / 50px;
-#}
+}
 /*「検索」メニューの設定
 アイコンの読み込み。左から15pxの場所に配置。背景画像の上から100px(-300px)を基準に読み込む。サイズは50px。*/
 #menubar li.map {
 	#background: url(<%= asset_path 'mark_menu.png' %>) no-repeat 15px -300px / 50px;
-#}
+}
 /*「お問い合わせ」メニューの設定
 アイコンの読み込み。左から15pxの場所に配置。背景画像の上から100px(-400px)を基準に読み込む。サイズは50px。*/
 #menubar li.contact {
 	#background: url(<%= asset_path 'mark_menu.png' %>) no-repeat 15px -400px / 50px;
-#}
+}
 /*装飾文字（英語表記）の設定*/
 #menubar li a span {
 	text-shadow: none;display: block;
@@ -150,11 +151,11 @@ header h1 {
 	letter-spacing: 0.2em;	/*文字間隔を少し広くする設定*/
 	padding-left: 3px;		/*左に少しだけ余白を作る。*/
 	opacity: 0.6;			/*60%だけ色がついた状態。*/
-#}
+}
 /*マウスオン時メニューと、現在表示中(current)メニューの設定*/
 #menubar li a:hover,#menubar li.current a {
 	background: rgba(0,0,0,0.15);	/*0,0,0は黒の事で、0.15は15%だけ色がついた状態の事。*/
-#}
+}
 /*スマホ用メニューを表示させない*/
 #menubar-s {display: none;}
 /*３本バーアイコンを表示させない*/
