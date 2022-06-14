@@ -7,7 +7,7 @@
   <h2>小説情報投稿</h2>
   <p>
     <strong class="color1">情報登録</strong><br>
-    あ
+    すでに投稿されている小説の情報更新は、当該小説の詳細ページから編集をお願いいたします。
   </p>
 
   <%= form_with model: @novel, local: true do |f| %>
@@ -27,11 +27,15 @@
         </tr>
         <tr>
           <th><%= f.label :作品ジャンル %></th>
-          <td><%= f.text_field :genre_id, placeholder: "西暦４桁（半角）" %></td>
+          <td><%= f.collection_select(:genre_id, Genre.all, :id, :name, {})  %></td>
         </tr>
         <tr>
           <th><%= f.label :舞台となった地域 %></th>
-          <td><%= f.text_field :auther, placeholder: "西暦４桁（半角）" %></td>
+          <td><select>
+              <% Area.all.each do |area| %>
+                <option><%= area.country %>,<%= area.prefecture %>,<%= area.city %></option>
+              <% end %>
+          </select></td>
         </tr>
         <tr>
           <th><%= f.label :その他地域 %></th>
