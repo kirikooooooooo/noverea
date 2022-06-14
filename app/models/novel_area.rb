@@ -1,0 +1,2 @@
+class NovelArea < ApplicationRecord
+end
