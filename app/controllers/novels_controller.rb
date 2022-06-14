@@ -9,10 +9,13 @@ class NovelsController < ApplicationController
   def create
     @novel = Novel.new(novel_params)
     if @novel.save
-      redirect_to action: :index
+      redirect_to action: :complete
     else
       render :new
     end
+  end
+  
+  def complete
   end
 
   private
