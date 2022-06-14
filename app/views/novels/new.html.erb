@@ -23,7 +23,7 @@
         </tr>
         <tr>
           <th><%= f.label :発売年 %></th>
-          <td><%= f.text_field :auther, placeholder: "西暦４桁（半角）" %></td>
+          <td><%= f.text_field :release_year, placeholder: "西暦４桁（半角）" %></td>
         </tr>
         <tr>
           <th><%= f.label :作品ジャンル %></th>
@@ -31,9 +31,10 @@
         </tr>
         <tr>
           <th><%= f.label :舞台となった地域 %></th>
-          <td><select>
+          <td><select name="novel[area_ids][]">
+                <option value="">地域を選択してください</option>
               <% Area.all.each do |area| %>
-                <option><%= area.country %>,<%= area.prefecture %>,<%= area.city %></option>
+                <option value=<%= area.id %>><%= area.country %>,<%= area.prefecture %>,<%= area.city %></option>
               <% end %>
           </select></td>
         </tr>
