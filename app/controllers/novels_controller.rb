@@ -3,6 +3,7 @@ class NovelsController < ApplicationController
   end
 
   def new
+    @novel = Novel.new
   end
 
   def create

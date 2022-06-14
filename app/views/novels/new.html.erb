@@ -4,8 +4,27 @@
 <div class="inner">
 
 <section>
+  <h2>小説情報投稿</h2>
+  <p>
+    <strong class="color1">情報登録</strong><br>
+    あ
+  </p>
 
-
+  <%= form_with model: @novel, local: true do |f| %>
+    <table class="ta1">
+      <tbody>
+        <tr>
+          <th><%= f.label :タイトル %></th>
+          <td><%= f.text_field :title, placeholder: "小説のタイトル" %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :著者 %></th>
+          <td><%= f.text_field :auther, placeholder: "著者名" %></td>
+        </tr>
+      </tbody>
+    </table>
+    <%= f.submit "投稿する" ,class:'btn' %>
+  <% end %>
 
 </section>
 </div>
