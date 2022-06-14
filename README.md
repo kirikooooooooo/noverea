@@ -151,6 +151,7 @@
 
 ### Association
 - belongs_to :user
+- has_many :novel_areas
 - has_many :areas, through: :novel_areas
 - has_many :novel_comments
 - has_many :favorite_novels
@@ -180,6 +181,7 @@
 
 
 ### Association
+- has_many :novel_areas
 - has_many :novels, through: :novel_areas
 - has_many :area_comments
 - has_many :favorite_areas
