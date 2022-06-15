@@ -1,5 +1,5 @@
 class Form::AreaCollection < Form::Base
-  FORM_COUNT = 50
+  FORM_COUNT = 10
   attr_accessor :areas
 
   def initialize(attributes = {})
