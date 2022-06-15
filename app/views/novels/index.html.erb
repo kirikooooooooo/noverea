@@ -4,7 +4,7 @@
 <div class="inner">
 
 	<section>
-
+  <h2>簡易検索</h2>
 	<h2 class="simple">検索Box</h2>
 	<p class="c">ここに検索Boxを設置する</p>
 
@@ -19,18 +19,22 @@
 <div class="inner">
 
 	<section>
-
-	<h2 class="simple">最近の投稿</h2>
+	<h2>最近の投稿</h2>
 	<p class="c">最近の投稿８〜１０件を一覧表示する</p>
 
-  <div class="box2">
-	<h4>ハリー・ポッターと賢者の石</h4>
-	<p>作者: J.K.ローリング<br>
-    発売年: 〇〇〇〇<br>
-    舞台:イギリス/イギリス,ロンドン</p>
-
-	
+	<ul>
+	<% @novels.each do |novel| %>
+	<li><div class="box2">
 	<span class="date">new</span>
+	<h4><%= novel.title %></h4>
+	<p>著者名: <%= novel.auther %><br>
+		発売年: <%= novel.release_year %><br>
+		舞台:<%=  %><br>
+		書籍販売情報：</p>
+	<% end %></li>
+</ul>
+
+
 	</div>
 
 	</section>

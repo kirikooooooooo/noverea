@@ -585,23 +585,36 @@ p.btn1 a:hover {
 /*ta1のtdタグ内の段落(p)タグ*/
 .ta1 p {padding: 0;}
 
+/*フォームのサイズ*/
+input[type="text"] {
+        width: 90% ;
+        height: 40px;
+    }
+
+.synopsis-input {
+		width: 90% ;
+		height: 100px;
+}
+
 /*inputボタン
 ---------------------------------------------------------------------------*/
 input[type="submit"].btn,
 input[type="button"].btn,
 input[type="reset"].btn {
-	padding: 5px 10px;		/*上下、左右へのボタン内の余白*/
+	margin-left: 30%;
+	padding: 5px 100px;		/*上下、左右へのボタン内の余白*/
 	border: 1px solid #ccc;	/*枠線の幅、線種、色*/
-	font-size: 15px;		/*文字サイズ*/
-	border-radius: 3px;		/*角丸のサイズ*/
-	background: #eee;		/*背景色*/
+	font-size: 25px;		/*文字サイズ*/
+	color: #fff;
+	border-radius: 5px;		/*角丸のサイズ*/
+	background: #9966CC ;		/*背景色*/
 }
 /*マウスオン時の設定*/
 input[type="submit"].btn:hover,
 input[type="button"].btn:hover,
 input[type="reset"].btn:hover {
 	border: 1px solid #999;	/*枠線の幅、線種、色*/
-	background: #fff;		/*背景色*/
+	background: #6666CC;		/*背景色*/
 }
 
 /*パンくずナビ
