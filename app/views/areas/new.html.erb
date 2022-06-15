@@ -1,0 +1,42 @@
+<body class="home">
+<%= render "shared/shortheader" %>
+<div class="contents">
+<div class="inner">
+
+<section>
+
+  <%= form_with(model:@form, url: areas_path, method: :post) do |f| %>
+  <table class="ta1">
+    <tbody>
+      <tr>
+        <th>国</th>
+        <th>都道府県/州</th>
+        <th>市区町村</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= f.fields_for :areas do |i| %>
+        <tr>
+          <td>
+          <%= i.text_field :country %>
+          </td>
+          <td>
+          <%= i.text_field :prefecture %>
+          </td>
+          <td>
+          <%= i.text_field :city %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= f.submit '一括登録', class: 'btn' %>
+<% end %>
+
+</section>
+</div>
+<!--/.inner-->
+</div>
+<!--/.contents-->
+
+<%= render "shared/footer" %>
