@@ -1,6 +1,6 @@
 class NovelsController < ApplicationController
   def index
-    @novels = Novel.includes(:areas).order("created_at DESC")
+    @novels = Novel.page(params[:page]).per(12).includes(:areas).order("created_at DESC")
   end
 
   def new
