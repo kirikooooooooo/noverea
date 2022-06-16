@@ -1,6 +1,7 @@
 class NovelsController < ApplicationController
   def index
-    @novels = Novel.page(params[:page]).per(12).includes(:areas).order("updated_at DESC")
+    @novels = Novel.includes(:areas).order("updated_at DESC")
+    @novels = Kaminari.paginate_array(@novels).page(params[:page])
   end
 
   def new
