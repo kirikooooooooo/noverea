@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_16_084341) do
+ActiveRecord::Schema.define(version: 2022_06_17_040259) do
 
   create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "country", null: false
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2022_06_16_084341) do
     t.text "mediamix"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "producturl"
   end
 
   add_foreign_key "novel_areas", "areas"
