@@ -397,12 +397,12 @@ footer .pr {display: block;}
 ---------------------------------------------------------------------------*/
 /*ボックス１個あたりの設定*/
 .box1 {
-	overflow: hidden;
+	overflow: scroll;
 	background: #fff;		/*背景色*/
 	color: #666;			/*文字色*/
-	margin: 0 2% 20px;		/*上、左右、下へのボックスの外に空けるスペース*/
+	margin: 0 1% 20px;		/*上、左右、下へのボックスの外に空けるスペース*/
 	border: 1px solid #eeeae2;	/*枠線の幅、線種、色*/
-	padding: 3%;
+	padding: 3% ;
 }
 /*box1内のh4(見出し)タグ*/
 .box1 h4 {
@@ -416,6 +416,18 @@ footer .pr {display: block;}
 .box1 p a {color: #666;}
 /*box2内のbtn1。本体の設定はこの下の下のブロックにあります。*/
 .box1 p.btn1 {margin-top: 20px;}
+
+/*box1内のブロック*/
+.box1bottom{
+	display: flex;
+}
+.box1left{
+	width: 30% ;
+	padding-right: 10px ;
+}
+.box1right{
+	width: 70% ;
+}
 
 /*box2（３カラムボックス）
 ---------------------------------------------------------------------------*/

@@ -29,7 +29,13 @@ class NovelsController < ApplicationController
   def complete
   end
 
-  helper_method:search_rakuten_api
+  def show
+    @novel = Novel.find(params[:id])
+    title = @novel.title
+    auther = @novel.auther
+    search_rakuten_api(title, auther)
+    search_rakuten_api_dvd(title)
+  end
   
   private
   def novel_params
@@ -44,6 +50,17 @@ class NovelsController < ApplicationController
     items = RakutenWebService::Books::Book.search(title: title, auther: auther)
     items.first(1).each do |item|
       @item = item
+    end
+  end
+
+  def search_rakuten_api_dvd(title)
+    RakutenWebService.configure do |c|
+      c.application_id = ENV["RAKUTEN_APP_KEY_ID"]
+      c.affiliate_id = ENV["RAKUTEN_AFFILIATE_KEY_ID"]
+    end
+    items = RakutenWebService::Books::DVD.search(title: title)
+    items.first(1).each do |item|
+      @dvditem = item
     end
   end
 end
