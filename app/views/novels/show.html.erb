@@ -7,15 +7,15 @@
   <h2>作品詳細</h2>
 
   <h3>基本情報</h3>
-  <p><strong class="color1">■タイトル</strong><br>
+  <p><strong class="color1">■タイトル■</strong>
       <%= @novel.title %><br>
-    <strong class="color1">■著作者</strong><br>
+    <strong class="color1">■著作者■</strong>
       <%= @novel.auther %><br>
-    <strong class="color1">■発売年</strong><br>
+    <strong class="color1">■発売年■</strong>
       <%=  @item.sales_date %><br>
-    <strong class="color1">■作品ジャンル</strong><br>
+    <strong class="color1">■作品ジャンル■</strong>
       <%= @novel.genre.name %><br>
-    <strong class="color1">■物語の舞台となった地域</strong><br>
+    <strong class="color1">■物語の舞台となった地域■</strong>
       <% country = @novel.areas&.first&.country %>
       <% prefecture = @novel.areas&.first&.prefecture %>
       <% city = @novel.areas&.first&.city %>
@@ -31,11 +31,9 @@
       <% if @novel.another_area != nil || @novel.another_area != "" %>
         <%= @novel.another_area %>
       <% end %><br>
-    <strong class="color1">■スポット</strong><br>
+    <strong class="color1">■スポット■</strong>
       <%= @novel.spot %><br>
-    <strong class="color1">■あらすじ</strong><br>
-      <%= @novel.synopsis  %><br>
-    <strong class="color1">■メディアミックス</strong><br>
+    <strong class="color1">■メディアミックス■</strong>
       <%= @novel.mediamix %><br>
   </p>
 
