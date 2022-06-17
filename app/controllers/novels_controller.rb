@@ -3,6 +3,14 @@ class NovelsController < ApplicationController
     @novels = Novel.includes(:areas).order("updated_at DESC")
     @novels = Kaminari.paginate_array(@novels).page(params[:page])
     
+    @result = []
+
+    @novels.each do |novel|
+      title = novel.title
+      auther = novel.auther
+      search_rakuten_api(title, auther)
+      @result << @item
+    end
   end
 
   def new
@@ -28,16 +36,15 @@ class NovelsController < ApplicationController
     params.require(:novel).permit(:title, :auther, :release_year, :genre_id, :another_area, :spot, :synopsis, :mediamix, area_ids:[])
   end
 
-  def search_rakuten_api(keyword)
+  def search_rakuten_api(title, auther)
     RakutenWebService.configure do |c|
       c.application_id = ENV["RAKUTEN_APP_KEY_ID"]
       c.affiliate_id = ENV["RAKUTEN_AFFILIATE_KEY_ID"]
     end
-    items = RakutenWebService::Books::Book.search(keyword: keyword)
+    items = RakutenWebService::Books::Book.search(title: title, auther: auther)
     images_arr = []
     items.first(1).each do |item|
-      @title = item.title
-      return @title
+      @item = item
     end
   end
 end

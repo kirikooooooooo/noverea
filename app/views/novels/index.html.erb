@@ -23,6 +23,7 @@
 	<p class="c">「new」最終更新日が本日の作品</p>
 
 	<ul>
+	<% count = 0 %>
 	<% @novels.each do |novel| %>
 		<% country = novel.areas&.first&.country %>
 		<% prefecture = novel.areas&.first&.prefecture %>
@@ -40,12 +41,25 @@
 						<% end %>
 						<% if city != nil %>
 							<%= city %>
+						<% end %>
+						<% if novel.another_area != nil || novel.another_area != "" %>
+							<%= novel.another_area %>
 						<% end %><br>
 						</p>
-						<% search = novel.title, novel.auther %>
-						<%= search_rakuten_api(search) %>
-						<%= @title %>
-		<% end %></li>
+				<div class="item">
+					<div class="itemheader">商品情報</div>
+					<div class="itembottom">
+						<div class=itembottomleft>
+							『<%= @result[count].title %>』<br><br>
+							<%= @result[count].item_price %>円
+						</div>
+						<div class=itembottomright>
+							<%= image_tag(@result[count].medium_image_url) %>
+						</div>
+					</div>
+					<% count += 1 %>
+				</div>
+	<% end %></li>
 	</ul>
 	</div>
 
