@@ -12,7 +12,7 @@
     <strong class="color1">■著作者</strong><br>
       <%= @novel.auther %><br>
     <strong class="color1">■発売年</strong><br>
-      <%= @novel.release_year %>年<br>
+      <%=  @item.sales_date %><br>
     <strong class="color1">■作品ジャンル</strong><br>
       <%= @novel.genre.name %><br>
     <strong class="color1">■物語の舞台となった地域</strong><br>
@@ -41,15 +41,30 @@
 
   <h3>商品情報</h3>
   <div class="box1 left leftstyle">
-    <%= link_to image_tag(@item.large_image_url), @item.item_url, target: :_blank, rel: "noopener noreferrer" %>
-    <%= link_to @item.title, @item.item_url, target: :_blank, rel: "noopener noreferrer" %><br>
-    <%= @item.item_caption %>
+    <h4><%= link_to @item.title, @item.item_url, target: :_blank, rel: "noopener noreferrer" %></h4><br>
+    <div class="box1bottom">
+      <div class="box1left">
+        <%= link_to image_tag(@item.large_image_url), @item.item_url, target: :_blank, rel: "noopener noreferrer" %>
+      </div>
+      <div class="box1right">
+        発売日情報：<%= @item.sales_date %><br>
+        <%= @item.item_caption %>
+      </div>
+    </div>
   </div>
   <% unless @dvditem.nil? %>
     <div class="box1 left leftstyle">
-      <%= link_to image_tag(@dvditem.large_image_url), @dvditem.item_url, target: :_blank, rel: "noopener noreferrer" %>
-      <%= link_to @dvditem.title, @dvditem.item_url, target: :_blank, rel: "noopener noreferrer" %><br>
-      <%= @dvditem.item_caption %>
+      <h4><%= link_to @dvditem.title, @dvditem.item_url, target: :_blank, rel: "noopener noreferrer" %></h4><br>
+      <div class="box1bottom">
+        <div class="box1left">
+          <%= link_to image_tag(@dvditem.large_image_url), @dvditem.item_url, target: :_blank, rel: "noopener noreferrer" %>
+        </div>
+        <div class="box1right">
+          発売日情報：<%= @dvditem.sales_date %><br>
+          <%= @dvditem.artist_name %><br>
+          <%= @dvditem.item_caption %>
+        </div>
+      </div>
     </div>
   <% end %>
 
