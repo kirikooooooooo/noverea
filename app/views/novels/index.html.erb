@@ -42,6 +42,9 @@
 							<%= city %>
 						<% end %><br>
 						</p>
+						<% search = novel.title, novel.auther %>
+						<%= search_rakuten_api(search) %>
+						<%= @title %>
 		<% end %></li>
 	</ul>
 	</div>
@@ -51,7 +54,7 @@
 			<%= paginate @novels %>
 		</div>
 	</div>
-	
+
 	</section>
 
 </div>
