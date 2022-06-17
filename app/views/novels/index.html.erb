@@ -32,7 +32,7 @@
 			<% if novel.updated_at.strftime("%Y/%m/%d") == Date.today.strftime("%Y/%m/%d") %>
 				<span class="date">new</span>
 			<% end %>
-			<h4><%= novel.title %></h4>
+			<h4><%= link_to novel.title, novel_path(novel.id) %></h4>
 			<p>著者名: <%= novel.auther %><br>
 				発売年: <%= novel.release_year %><br>
 				舞台:<%= country %>
