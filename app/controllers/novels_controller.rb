@@ -42,7 +42,6 @@ class NovelsController < ApplicationController
       c.affiliate_id = ENV["RAKUTEN_AFFILIATE_KEY_ID"]
     end
     items = RakutenWebService::Books::Book.search(title: title, auther: auther)
-    images_arr = []
     items.first(1).each do |item|
       @item = item
     end

@@ -50,11 +50,11 @@
 					<div class="itemheader">商品情報</div>
 					<div class="itembottom">
 						<div class=itembottomleft>
-							『<%= @result[count].title %>』<br><br>
+							『<%= link_to @result[count].title, @result[count].item_url, target: :_blank, rel: "noopener noreferrer" %>』<br><br>
 							<%= @result[count].item_price %>円
 						</div>
 						<div class=itembottomright>
-							<%= image_tag(@result[count].medium_image_url) %>
+							<%= link_to (image_tag(@result[count].medium_image_url)), @result[count].item_url, target: :_blank, rel: "noopener noreferrer" %>
 						</div>
 					</div>
 					<% count += 1 %>
