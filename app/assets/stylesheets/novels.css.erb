@@ -444,14 +444,14 @@ footer .pr {display: block;}
 	width: 50px;			/*幅*/
 	line-height: 50px;		/*高さ*/
 	border-radius: 50%;		/*円形にする*/
-	text-align: center;		/*文字をセンタリング*/
+	text-align: center;		/*文字をセタリング*/
 	transform: rotate(-20deg);	/*回転の角度*/
 }
 /*box2内のp(段落)タグ*/
 .box2 p {
 	padding: 0 !important;
-	height: 4.5em;		/*高さ。*/
-	overflow: hidden;	/*オーバーした分は非表示に。*/
+	height: 8em;		/*高さ。*/
+	#overflow: hidden;	/*オーバーした分は非表示に。*/
 	font-size: 14px;	/*文字サイズ*/
 	text-align: left;	/*文字を左よせ*/
 }
@@ -463,7 +463,7 @@ footer .pr {display: block;}
 .box2 h4 {
 	color: #744198;	/*文字色*/
 	height: 1.5em;	/*高さ*/
-	overflow: hidden;	/*オーバーした分は非表示に。*/
+	#overflow: hidden;	/*オーバーした分は非表示に。*/
 }
 /*box2内のfigure(画像)タグ*/
 .box2 figure {
@@ -480,6 +480,30 @@ footer .pr {display: block;}
 	display: block;
 	padding: 5px 0;	/*上下、左右へのボタン内の余白*/
 }
+
+/*box2内の商品情報*/
+.item{
+	margin-top:5px;
+}
+
+.itemheader{
+	border: 1px solid silver ;
+}
+
+.itembottom{
+	display: flex;
+	border: 1px solid silver ;
+	padding: 5px 0;
+}
+
+.itembottomleft{
+	width: 50% ;
+}
+
+.itembottomright{
+	width: 50% ;
+}
+
 
 /*box1、box2のfigure写真共通設定
 ---------------------------------------------------------------------------*/
@@ -666,7 +690,7 @@ input[type="reset"].btn:hover {
 	background: #532673 url(<%= asset_path 'bg2.jpg' %>) center / 100px;	/*背景色、背景画像の読み込み。*/
 	color: #fff;	/*文字色*/
 }
-.bg2 a {color: #fff;}
+#.bg2 a {color: #fff;}
 .bg2 h2 {color: #fff !important;}
 
 /*背景色（bg-access）※全ページ下部にある「アクセス」ブロック
