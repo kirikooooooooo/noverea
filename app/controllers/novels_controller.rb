@@ -29,7 +29,8 @@ class NovelsController < ApplicationController
   def complete
   end
 
-  helper_method:search_rakuten_api
+  def show
+  end
   
   private
   def novel_params
