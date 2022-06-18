@@ -15,15 +15,11 @@ class AreasController < ApplicationController
 
   def show
     @area = Area.find(params[:id])
-    rand = Rails.env.production? ? "RANDOM()" : "rand()"
     if @area.city == nil
-      same_country = Area.where(country:@area.country, prefecture:nil, city:nil).order(rand)
-      @same_country_id = same_country.ids
+      @same_country_id = Area.where(country:@area.country, prefecture:nil, city:nil).ids
     elsif @area.city != nil
-      same_country = Area.where(country:@area.country, prefecture:nil, city:nil).order(rand)
-      @same_country_id = same_country.ids
-      same_country_pre = Area.where(country:@area.country, prefecture:@area.prefecture, city:nil).order(rand)
-      @same_country_pre_id = same_country_pre.ids
+      @same_country_id = Area.where(country:@area.country, prefecture:nil, city:nil).ids
+      @same_country_pre_id = Area.where(country:@area.country, prefecture:@area.prefecture, city:nil).ids
     end
     @novels = @area.novels
     @result = []
