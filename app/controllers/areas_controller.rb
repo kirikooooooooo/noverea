@@ -33,7 +33,8 @@ class AreasController < ApplicationController
   end
 
   def search
-    @areas = Area.search(params[:keyword]).order("updated_at DESC")
+    @q = Area.ransack(params[:q])
+    @areas = @q.result
     @novels = []
     @areas.each do |area|
       @novels << area.novels

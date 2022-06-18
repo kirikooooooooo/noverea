@@ -4,11 +4,4 @@ class Area < ApplicationRecord
 
   validates :country, presence: true
 
-  def self.search(search)
-    if search != ""
-      Area.where('country LIKE(?) OR prefecture LIKE(?) OR city LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
-    else
-      Area.where('prefecture LIKE(?) ', "%#{"東京"}%")
-    end
-  end
 end

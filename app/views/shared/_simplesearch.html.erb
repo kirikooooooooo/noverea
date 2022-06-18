@@ -1,0 +1,9 @@
+<%= form_with(url: search_novels_path, local: true, method: :get) do |form| %>
+  <%= form.text_field :keyword, placeholder: "作品タイトル・作者名から検索する" %>
+  <%= form.submit "検索" , class:"searchbtn" %>
+<% end %><br>
+<%= search_form_for @q, url: search_areas_path do |f| %>
+    <%= f.label :country_cont, '国名' %>
+    <%= f.text_field :country_cont, placeholder: '国名' %>
+  <%= f.submit '検索' %>
+<% end %>

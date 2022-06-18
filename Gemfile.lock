@@ -163,6 +163,10 @@ GEM
     rake (13.0.6)
     rakuten_web_service (1.13.1)
       json (~> 2.3)
+    ransack (3.0.1)
+      activerecord (>= 6.0.4)
+      activesupport (>= 6.0.4)
+      i18n
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -240,6 +244,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 6.0.0)
   rakuten_web_service
+  ransack
   sass-rails (~> 5)
   selenium-webdriver
   spring
