@@ -1,4 +1,6 @@
 class NovelsController < ApplicationController
+  before_action :set_novel, only:[:show, :edit, :update]
+
   def index
     @novels = Novel.includes(:areas).order("updated_at DESC")
     @novels = Kaminari.paginate_array(@novels).page(params[:page])
@@ -30,7 +32,6 @@ class NovelsController < ApplicationController
   end
 
   def show
-    @novel = Novel.find(params[:id])
     title = @novel.title
     auther = @novel.auther
     search_rakuten_api(title, auther)
@@ -38,15 +39,23 @@ class NovelsController < ApplicationController
   end
 
   def edit
-    @novel = Novel.find(params[:id])
   end
 
   def update
+    if @novel.update(novel_params)
+      redirect_to novel_path(@novel.id)
+    else
+      render :edit
+    end
   end
   
   private
   def novel_params
     params.require(:novel).permit(:title, :auther, :release_year, :genre_id, :another_area, :spot, :synopsis, :mediamix, area_ids:[])
+  end
+
+  def set_novel
+    @novel = Novel.find(params[:id])
   end
 
   def search_rakuten_api(title, auther)

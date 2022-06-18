@@ -6,9 +6,8 @@
 <section>
   <h2>小説情報編集</h2>
   <p>
-    <strong class="color1">情報編集</strong><br>
+    <strong class="color1">当該小説情報の削除を希望される場合は、お手数ですが、お問い合わせフォームよりご連絡ください。</strong><br>
   </p>
-
   <%= form_with model: @novel, local: true do |f| %>
     <table class="ta1">
       <tbody>
@@ -35,7 +34,14 @@
               <% Area.all.each do |area| %>
                 <option value=<%= area.id %>><%= area.country %>,<%= area.prefecture %>,<%= area.city %></option>
               <% end %>
-          </select></td>
+          </select>
+            <% country = @novel.areas&.first&.country %>
+            <% prefecture = @novel.areas&.first&.prefecture %>
+            <% city = @novel.areas&.first&.city %>
+          <% if country != nil %>
+            登録中の地域「<%= country %>,<%= prefecture %>,<%= city %>」
+          <% end %>
+          </td>
         </tr>
         <tr>
           <th><%= f.label :その他地域 %></th>
