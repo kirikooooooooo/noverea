@@ -7,10 +7,10 @@
   <h2>「<%= @area.country %><%= @area.prefecture %><%= @area.city %>」 が舞台の作品一覧</h2>
     <% if @area.prefecture == nil %>
     <% elsif @area.city == nil %>
-      <p class="btn1 a"><%= link_to "#{@area.country}が舞台の作品一覧へ", area_path( @same_country.ids ) %></p>
+      <p class="btn1 a"><%= link_to "#{@area.country}が舞台の作品一覧へ", area_path( @same_country_id ) %></p>
     <% elsif @area.city != nil %>
-      <p class="btn1 a"><%= link_to "#{@area.country}が舞台の作品一覧へ", area_path( @same_country.ids ) %></p>
-      <p class="btn1 a"><%= link_to "#{@area.country},#{@area.prefecture}が舞台の作品一覧へ", area_path( @same_country_pre.ids ) %></p>
+      <p class="btn1 a"><%= link_to "#{@area.country}が舞台の作品一覧へ", area_path( @same_country_id ) %></p>
+      <p class="btn1 a"><%= link_to "#{@area.country},#{@area.prefecture}が舞台の作品一覧へ", area_path( @same_country_pre_id ) %></p>
     <% end %>
   <ul>
   <% count = 0 %>
