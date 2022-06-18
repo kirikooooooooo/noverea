@@ -4,9 +4,11 @@
 <div class="inner">
 
 	<section>
-  <h2>簡易検索</h2>
-	<h2 class="simple">検索Box</h2>
-	<p class="c">ここに検索Boxを設置する</p>
+  <h2>簡易検索BOX</h2>
+	<%= form_with(url: search_novels_path, local: true, method: :get) do |form| %>
+		<%= form.text_field :keyword, placeholder: "作品タイトル・作者名から検索する" %>
+		<%= form.submit "検索" , class:"searchbtn" %>
+	<% end %>
 
 	</section>
 

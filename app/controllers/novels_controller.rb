@@ -48,6 +48,20 @@ class NovelsController < ApplicationController
       render :edit
     end
   end
+
+  def search
+    @novels = Novel.search(params[:keyword]).order("updated_at DESC")
+    @novels = Kaminari.paginate_array(@novels).page(params[:page])
+
+    @result = []
+
+    @novels.each do |novel|
+      title = novel.title
+      auther = novel.auther
+      search_rakuten_api(title, auther)
+      @result << @item
+    end
+  end
   
   private
   def novel_params
