@@ -15,12 +15,12 @@ class AreasController < ApplicationController
 
   def show
     @area = Area.find(params[:id])
-    if @area.city == nil
-      @same_country_id = Area.where(country:@area.country, prefecture:nil, city:nil).ids
-    elsif @area.city != nil
-      @same_country_id = Area.where(country:@area.country, prefecture:nil, city:nil).ids
-      @same_country_pre_id = Area.where(country:@area.country, prefecture:@area.prefecture, city:nil).ids
-    end
+    #if @area.city == nil
+    #  @same_country_id = Area.where(country:@area.country, prefecture:nil, city:nil).ids
+    #elsif @area.city != nil
+    #  @same_country_id = Area.where(country:@area.country, prefecture:nil, city:nil).ids
+    #  @same_country_pre_id = Area.where(country:@area.country, prefecture:@area.prefecture, city:nil).ids
+    #end
     @novels = @area.novels
     @result = []
 
