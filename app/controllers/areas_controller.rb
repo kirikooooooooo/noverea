@@ -32,15 +32,6 @@ class AreasController < ApplicationController
     end
   end
 
-  def search
-    @q = Area.ransack(params[:q])
-    @areas = @q.result
-    @novels = []
-    @areas.each do |area|
-      @novels << area.novels
-    end
-  end
-
   private
 
   def area_collection_params

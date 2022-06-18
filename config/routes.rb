@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :novels, only: [:index, :new, :create, :show, :edit, :update] do
     collection do
       get 'search'
+      get 'search_area'
     end
   end
   resources :areas, only: [:new, :create, :show] do
