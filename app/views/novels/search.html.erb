@@ -1,0 +1,69 @@
+<body class="home">
+<%= render "shared/shortheader" %>
+<div class="contents">
+<div class="inner">
+
+<section>
+<h2>簡易検索BOX</h2>
+<%= form_with(url: search_novels_path, local: true, method: :get) do |form| %>
+  <%= form.text_field :keyword, placeholder: "作品タイトル・作者名から検索する" %>
+  <%= form.submit "検索" , class:"searchbtn" %>
+<% end %>
+</section>
+
+<section>
+<h2>検索結果</h2>
+<ul>
+<% count = 0 %>
+<% @novels.each do |novel| %>
+  <% country = novel.areas&.first&.country %>
+  <% prefecture = novel.areas&.first&.prefecture %>
+  <% city = novel.areas&.first&.city %>
+    <li><div class="box2">
+    <% if novel.updated_at.strftime("%Y/%m/%d") == Date.today.strftime("%Y/%m/%d") %>
+      <span class="date">new</span>
+    <% end %>
+    <h4><%= link_to novel.title, novel_path(novel.id) %></h4>
+    <p>著者名: <%= novel.auther %><br>
+      発売年: <%= @result[count].sales_date %><br>
+      舞台:<%= country %>
+          <% if prefecture != nil %>
+            <%= prefecture %>
+          <% end %>
+          <% if city != nil %>
+            <%= city %>
+          <% end %><br>
+          <% if country != nil %>
+            <%= link_to "同じ地域が舞台となった作品一覧へ", area_path( novel.areas&.first&.id ) %>
+          <% end %>
+          <% if novel.another_area != nil || novel.another_area != "" %>
+            <%= novel.another_area %>
+          <% end %><br>
+      </p>
+      <div class="item">
+        <div class="itemheader">商品情報【楽天BOOKS】</div>
+        <div class="itembottom">
+        <div class=itembottomleft>
+          『<%= link_to @result[count].title, @result[count].item_url, target: :_blank, rel: "noopener noreferrer" %>』<br><br>
+          <%= @result[count].item_price %>円
+        </div>
+        <div class=itembottomright>
+          <%= link_to (image_tag(@result[count].medium_image_url)), @result[count].item_url, target: :_blank, rel: "noopener noreferrer" %>
+        </div>
+			</div>
+      <% count += 1 %>
+ <% end %></div></li>
+</ul>
+
+<div class="contents bg2">
+<div class="inner">
+  <%= paginate @novels %>
+</div>
+</div>
+</section>
+</div>
+<!--/.inner-->
+</div>
+<!--/.contents-->
+
+<%= render "shared/footer" %>
