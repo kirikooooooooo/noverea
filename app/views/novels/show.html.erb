@@ -28,6 +28,7 @@
       <% if city != nil %>
         <%= city %>
       <% end %>
+      <%= link_to "同じ地域が舞台となった作品一覧へ", area_path(( @novel.areas&.first&.id )) %>
       <% if @novel.another_area != nil || @novel.another_area != "" %>
         <%= @novel.another_area %>
       <% end %><br>
