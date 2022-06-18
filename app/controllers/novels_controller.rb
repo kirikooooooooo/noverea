@@ -36,6 +36,13 @@ class NovelsController < ApplicationController
     search_rakuten_api(title, auther)
     search_rakuten_api_dvd(title)
   end
+
+  def edit
+    @novel = Novel.find(params[:id])
+  end
+
+  def update
+  end
   
   private
   def novel_params
