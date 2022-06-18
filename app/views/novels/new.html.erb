@@ -15,15 +15,11 @@
       <tbody>
         <tr>
           <th><%= f.label :タイトル（必須） %></th>
-          <td><%= f.text_field :title, placeholder: "小説のタイトル" %></td>
+          <td><%= f.text_field :title, placeholder: "小説のタイトル",class:"inputtype-text" %></td>
         </tr>
         <tr>
           <th><%= f.label :著者（必須） %></th>
-          <td><%= f.text_field :auther, placeholder: "著者名" %></td>
-        </tr>
-        <tr>
-          <th><%= f.label :発売年 %></th>
-          <td><%= f.text_field :release_year, placeholder: "西暦４桁（半角）" %></td>
+          <td><%= f.text_field :auther, placeholder: "著者名",class:"inputtype-text" %></td>
         </tr>
         <tr>
           <th><%= f.label :作品ジャンル %></th>
@@ -40,11 +36,11 @@
         </tr>
         <tr>
           <th><%= f.label :その他地域 %></th>
-          <td><%= f.text_field :another_area, placeholder: "上記プルダウンにない地域はこちらに入力" %></td>
+          <td><%= f.text_field :another_area, placeholder: "上記プルダウンにない地域はこちらに入力",class:"inputtype-text" %></td>
         </tr>
         <tr>
           <th><%= f.label :スポット %></th>
-          <td><%= f.text_field :spot, placeholder: "舞台となった施設等(例：国会議事堂、渋谷ヒカリエ、ルーブル美術館)" %></td>
+          <td><%= f.text_field :spot, placeholder: "舞台となった施設等(例：国会議事堂、渋谷ヒカリエ、ルーブル美術館)",class:"inputtype-text" %></td>
         </tr>
         <tr>
           <th><%= f.label :小説のあらすじ %></th>
@@ -52,7 +48,7 @@
         </tr>
         <tr>
           <th><%= f.label :メディアミックス %></th>
-          <td><%= f.text_field :mediamix, placeholder: "アニメ化・映画化等のメディアミックス情報" %></td>
+          <td><%= f.text_field :mediamix, placeholder: "アニメ化・映画化等のメディアミックス情報",class:"inputtype-text" %></td>
         </tr>
       </tbody>
     </table>

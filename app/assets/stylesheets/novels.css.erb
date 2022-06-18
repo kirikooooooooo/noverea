@@ -561,6 +561,26 @@ p.btn1 a:hover {
 	color: #744198 !important;	/*文字色*/
 }
 
+/*simple-searchbtn
+---------------------------------------------------------------------------*/
+.simple-searchbtn {
+	text-decoration: none;display: inline-block;
+	border: 1px solid transparent;	/*枠線の幅、線種、色。transparentは透明の事。*/
+	background: #744198;	/*背景色*/
+	color: #fff !important;	/*文字色*/
+	border-radius: 3px;		/*角丸のサイズ*/
+	padding: 5px 30px;		/*上下、左右へのボタン内の余白*/
+	margin-top: 10px ;
+	margin-left: 40px ;
+	text-align: center;		/*文字をセンタリング*/
+}
+/*マウスオン時*/
+.simple-searchbtn:hover {
+	border: 1px solid #744198;	/*枠線の幅、線種、色。*/
+	background: #fff;			/*背景色*/
+	color: #744198 !important;	/*文字色*/
+}
+
 /*写真を３列に並べたレイアウト
 ---------------------------------------------------------------------------*/
 /*ボックス１個あたりの設定*/
@@ -642,7 +662,7 @@ p.btn1 a:hover {
 .ta1 p {padding: 0;}
 
 /*フォームのサイズ*/
-input[type="text"] {
+.inputtype-text {
         width: 90% ;
         height: 40px;
     }
@@ -650,6 +670,18 @@ input[type="text"] {
 .synopsis-input {
 		width: 90% ;
 		height: 100px;
+}
+
+.simplesearch-novel{
+	width: 70% ;
+	margin-left: 40px;
+}
+.simplesearch-area{
+	width: 20% ;
+	margin-left: 40px;
+}
+.simplesearch-areatext{
+	margin-left: 5px;
 }
 
 /*inputボタン

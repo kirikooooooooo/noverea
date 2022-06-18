@@ -1,0 +1,15 @@
+<h3>作品名・著者名から検索</h3>
+<%= form_with(url: search_novels_path, local: true, method: :get) do |form| %>
+  <%= form.text_field :keyword, placeholder: "作品タイトル・作者名から検索する",class:"simplesearch-novel" %>
+  <%= form.submit "検索" , class:"simple-searchbtn" %>
+<% end %><br>
+<h3>地域名から検索</h3>
+<%= search_form_for @q, url: search_areas_path do |f| %>
+    <a class="simplesearch-area"><%= f.label :country_cont, '国名' %></a>
+    <%= f.text_field :country_cont, placeholder: '国名',class:"simplesearch-areatext" %>
+    <a class="simplesearch-area"><%= f.label :prefecture_cont, '都道府県/州' %></a>
+    <%= f.text_field :prefecture_cont, placeholder: '都道府県/州',class:"simplesearch-areatext" %>
+    <a class="simplesearch-area"> <%= f.label :city_cont, '市区町村' %></a>
+    <%= f.text_field :city_cont, placeholder: '市区町村',class:"simplesearch-areatext" %>
+<%= f.submit '検索', class:"simple-searchbtn" %>
+<% end %>
