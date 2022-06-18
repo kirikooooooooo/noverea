@@ -32,6 +32,14 @@ class AreasController < ApplicationController
     end
   end
 
+  def search
+    @areas = Area.search(params[:keyword]).order("updated_at DESC")
+    @novels = []
+    @areas.each do |area|
+      @novels << area.novels
+    end
+  end
+
   private
 
   def area_collection_params
