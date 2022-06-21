@@ -211,6 +211,16 @@ https://noverea.herokuapp.com/
 
 <br>
 
+## admins テーブル
+
+| Column             | Type       | Options                 |
+| ------------------ | ---------- | ----------------------- |
+| email              | string     | null: false,unique: true|
+| encrypted_password | string     | null: false             |
+| nickname           | string     | null: false             |
+
+<br>
+
 ## novel_comments テーブル
 
 | Column             | Type       | Options               |
