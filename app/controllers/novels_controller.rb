@@ -1,5 +1,6 @@
 class NovelsController < ApplicationController
   before_action :set_novel, only:[:show, :edit, :update]
+  before_action :authenticate_user!, only:[:create, :edit, :update]
 
   def index
     @novels = Novel.includes(:areas).order("updated_at DESC")
