@@ -121,15 +121,18 @@ https://noverea.herokuapp.com/
 # 実装済機能について
 - 小説（作品）管理機能
 - 商品情報の表示機能(楽天API)
+- 簡易検索機能
 <br>
 <br>
   
 # 実装予定の機能
-- 検索機能
+- 詳細検索機能
 - ユーザー管理機能
+- 管理者機能
 - コメント管理機能
 - フォロー管理機能
 - お気に入り管理機能
+- レスポンシブ対応
   
 <br>
 <br>
@@ -208,6 +211,16 @@ https://noverea.herokuapp.com/
 - has_many :favorite_novels
 - has_many :favorite_areas
 - has_many :follows
+
+<br>
+
+## admins テーブル
+
+| Column             | Type       | Options                 |
+| ------------------ | ---------- | ----------------------- |
+| email              | string     | null: false,unique: true|
+| encrypted_password | string     | null: false             |
+| nickname           | string     | null: false             |
 
 <br>
 

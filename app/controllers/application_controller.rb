@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth
+  before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_search
-
+  
   def set_search
     @q = Area.ransack(params[:q])
     @areas = @q.result
@@ -18,4 +19,9 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
+  end
+  
 end

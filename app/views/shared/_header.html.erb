@@ -1,10 +1,15 @@
 <header>
   <div class="inner">
-    <h1 id="logo"><a href="#"><%= image_tag "NOVEREA.gif" %></a></h1>
+    <h1 id="logo"><%= image_tag "NOVEREA.gif" %></h1>
         
     <ul id="header-nav">
-      <li><a href="#">ログイン</a></li>
-      <li><a href="#">新規登録</a></li>
+    <% if user_signed_in? %>
+      <li><%= link_to "#" do %><%= current_user.nickname %>さんのマイページ<% end %></li>
+      <li><%= link_to destroy_user_session_path, method: :delete do %>ログアウト<% end %></li>
+    <% else %>
+      <li><%= link_to new_user_session_path do %>ログイン<% end %></li>
+      <li><%= link_to new_user_registration_path do %>新規登録<% end %></li>
+    <% end %>
     </ul>
   </div>
 </header>
