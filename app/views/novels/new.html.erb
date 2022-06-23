@@ -4,6 +4,11 @@
 <div class="inner">
 
 <section>
+  <% unless  user_signed_in? %>
+    <h3>※投稿するには、ログインをしてください※
+    <%= link_to "ログイン", new_user_session_path %>
+    <%= link_to "新規登録", new_user_registration_path %></h3>
+  <% end %>
   <h2>小説情報投稿</h2>
   <p>
     <strong class="color1">情報登録</strong><br>
@@ -52,8 +57,15 @@
         </tr>
       </tbody>
     </table>
+    <% if  user_signed_in? %>
     <%= f.submit "投稿する" ,class:'btn' %>
+    <% end %>
   <% end %>
+  <% unless  user_signed_in? %>
+  <h3>※投稿するには、ログインする必要があります※
+  <%= link_to "ログイン", new_user_session_path %>
+  <%= link_to "新規登録", new_user_registration_path %></h3>
+<% end %>
 
 </section>
 </div>

@@ -39,7 +39,14 @@
     <strong class="color1">■メディアミックス■</strong>
       <%= @novel.mediamix %><br>
   </p>
-  <p class="btn1 a"><%= link_to "基本情報を編集する", edit_novel_path(@novel.id) %>　※基本情報の編集をする場合、ログインをしてください。</p>
+  <% if  user_signed_in? %>
+    <p class="btn1 a"><%= link_to "基本情報を編集する", edit_novel_path(@novel.id) %></p>
+  <% else %>
+    <p> ※基本情報の編集をする場合、ログインをしてください。
+    <%= link_to "ログイン", new_user_session_path %>
+    <%= link_to "新規登録", new_user_registration_path %>
+    </p>
+  <% end %>
 
 
   <h3>商品情報</h3>
