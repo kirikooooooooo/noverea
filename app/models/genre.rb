@@ -11,8 +11,9 @@ class Genre < ActiveHash::Base
     { id: 9, name: '経済小説' },
     { id: 10, name: '政治小説' },
     { id: 11, name: '歴史小説・時代小説' },
-    { id: 12, name: '児童小説' },
-    { id: 13, name: '官能小説' }
+    { id: 12, name: '純文学' },
+    { id: 13, name: '児童小説' },
+    { id: 14, name: '官能小説' }
   ]
 
   include ActiveHash::Associations
