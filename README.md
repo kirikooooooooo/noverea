@@ -132,6 +132,7 @@ https://noverea.herokuapp.com/
 - コメント管理機能
 - フォロー管理機能
 - お気に入り管理機能
+- レスポンシブ対応
   
 <br>
 <br>

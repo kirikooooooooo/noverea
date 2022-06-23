@@ -1,14 +1,21 @@
-<h2>Log in</h2>
+<body class="home">
+<%= render "shared/shortheader" %>
+<div class="contents">
+<div class="inner">
+
+<section>
+
+<h2>ログイン/Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"inputtype-text" %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password",class:"inputtype-text" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -19,8 +26,8 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in" , class:"searchbtn" %>
   </div>
-<% end %>
+<% end %><br>
 
 <%= render "devise/shared/links" %>
