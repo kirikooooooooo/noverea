@@ -4,11 +4,6 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.try(:admin?)
-      return unless user && user&.admin? # 管理者じゃなければこのメソッドを抜ける
-      can :access, :rails_admin
-      can :manage, :all
-    end
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
