@@ -8,7 +8,9 @@
 		<li><a href="#">小説情報投稿</a></li>
 		<li><a href="#">検索</a></li>
 		<li><a href="#">お問い合わせ</a></li>
+		<% if current_user.try(:admin?) %>
 		<li><%= link_to new_area_path do %>管理者ページ<% end %></li>
+		<% end %>
 	</ul>
 </div>
 <!--/footermenu-->
