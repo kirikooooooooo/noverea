@@ -1,4 +1,5 @@
 class AreasController < ApplicationController
+  before_action :authenticate_admin!, only:[ :new, :create ]
 
   def new
     @form = Form::AreaCollection.new
