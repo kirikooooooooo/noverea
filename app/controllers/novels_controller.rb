@@ -32,6 +32,9 @@ class NovelsController < ApplicationController
   def complete
   end
 
+  def concept
+  end
+
   def show
     title = @novel.title
     auther = @novel.auther
