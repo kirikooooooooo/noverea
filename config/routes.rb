@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   }
   root to:"novels#index"
   get 'novels/complete'
+  get 'novels/concept'
   resources :novels, only: [:index, :new, :create, :show, :edit, :update] do
     collection do
       get 'search'

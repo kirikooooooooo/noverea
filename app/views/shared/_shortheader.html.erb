@@ -2,7 +2,7 @@
 <nav id="menubar" class="nav-fix-pos">
   <ul class="inner">
     <li class="info"><%= link_to novels_path do %>ホーム<span>Home</span><% end %></li>
-    <li class="event"><%= link_to '#' do %>コンセプト<span>Concept</span><% end %></li>
+    <li class="event"><%= link_to novels_concept_path do %>コンセプト<span>Concept</span><% end %></li>
     <li class="shopping"><%= link_to new_novel_path do %>小説情報投稿<span>Post</span><% end %></li>
     <li class="shopping"><%= link_to '#' do %>検索<span>Search</span><% end %></li>
     <li class="contact"><%= link_to '#' do %>お問い合せ<span>Contact</span><% end %></li>
@@ -12,7 +12,7 @@
 <nav id="menubar-s">
   <ul>
     <li class="info"><%= link_to novels_path do %>ホーム<span>Home</span><% end %></li>
-    <li class="event"><%= link_to '#' do %>コンセプト<span>Concept</span><% end %></li>
+    <li class="event"><%= link_to novels_concept_path do %>コンセプト<span>Concept</span><% end %></li>
     <li class="shopping"><%= link_to new_novel_path do %>小説情報投稿<span>Post</span><% end %></li>
     <li class="shopping"><%= link_to '#' do %>検索<span>Search</span><% end %></li>
     <li class="contact"><%= link_to '#' do %>お問い合せ<span>Contact</span><% end %></li>
