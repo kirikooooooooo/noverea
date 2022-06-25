@@ -1,10 +1,9 @@
 <div class="contents">
 <div class="inner">
 
+
 <section>
 <h2>地域情報追加</h2>
-<%= link_to "管理者ログアウト", destroy_admin_session_path, mothod: :delete %>
-<%= link_to "管理者トップページへ", admins_toppages_index_path %>
 
   <%= form_with(model:@form, url: areas_path, method: :post) do |f| %>
   <table class="ta1">
@@ -34,6 +33,10 @@
   <%= f.submit '一括登録', class: 'btn' %>
 <% end %>
 
+</section>
+<section>
+<%= link_to "管理者ログアウト", destroy_admin_session_path, mothod: :delete, class:"another-btn" %>
+<%= link_to "管理者トップページへ", admins_toppages_index_path, class:"another-btn" %><br><br>
 </section>
 </div>
 <!--/.inner-->

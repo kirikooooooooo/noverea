@@ -3,10 +3,14 @@
 
 <section>
 <h2>管理者ページ</h2>
-<%= link_to "管理者ログアウト", destroy_admin_session_path, mothod: :delete %>
-<%= link_to "地域情報追加", new_area_path %>
-<%= link_to "小説削除", "#", mothod: :delete %>
+<%= link_to "管理者ログアウト", destroy_admin_session_path, mothod: :delete, class:"another-btn" %><br><br>
 
+<h3>管理者メニュー</h3>
+<ul>
+  <li><%= link_to "地域情報追加", new_area_path %></li>
+  <li><%= link_to "登録済地域一覧", "#" %></li>
+  <li><%= link_to "小説削除", "#" %></li>
+</ul>
 </section>
 </div>
 <!--/.inner-->
