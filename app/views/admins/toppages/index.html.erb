@@ -1,0 +1,15 @@
+<div class="contents">
+<div class="inner">
+
+<section>
+<h2>管理者ページ</h2>
+<%= link_to "管理者ログアウト", destroy_admin_session_path, mothod: :delete %>
+<%= link_to "地域情報追加", new_area_path %>
+<%= link_to "小説削除", "#", mothod: :delete %>
+
+</section>
+</div>
+<!--/.inner-->
+</div>
+<!--/.contents-->
+<%= render "shared/footer" %>
