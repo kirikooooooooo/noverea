@@ -2,11 +2,10 @@ Rails.application.routes.draw do
   namespace :admins do
     get 'toppages/index'
   end
-  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
-    #registrations: 'admins/registrations'
+    registrations: 'admins/registrations'
   }
   devise_scope :admin do
     get '/admins/sign_out' => 'admins/sessions#destroy'
